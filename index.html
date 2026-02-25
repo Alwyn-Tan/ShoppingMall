@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Future Drinks Shopping Mall</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html">
+          <strong>Future Drinks</strong>
+        </a>
+
+        <form class="search" action="#" role="search">
+          <input type="search" placeholder="Search drinks..." name="q">
+        </form>
+
+        <div class="cart">
+          <input id="cart-toggle" type="checkbox" class="visually-hidden">
+
+          <label class="cart-btn" for="cart-toggle">
+            <span class="label-text">Cart</span>
+            <span class="badge">3</span>
+          </label>
+
+          <aside class="cart-panel" aria-label="Shopping list">
+            <h3>Your Cart</h3>
+            <div class="cart-items">
+              <div class="cart-item">
+                <img src="assets/thumb/1_thumb.jpg" alt="Peach Oolong Fruit Tea">
+                <div class="meta">
+                  <strong>Peach Oolong Fruit Tea</strong>
+                  <small>$26.00</small>
+                </div>
+                <input type="number" min="1" value="1" aria-label="Peach Oolong Fruit Tea quantity">
+              </div>
+              <div class="cart-item">
+                <img src="assets/thumb/3_thumb.jpg" alt="Cold Brew Americano">
+                <div class="meta">
+                  <strong>Cold Brew Americano</strong>
+                  <small>$20.00</small>
+                </div>
+                <input type="number" min="1" value="1" aria-label="Cold Brew Americano quantity">
+              </div>
+              <div class="cart-item">
+                <img src="assets/thumb/5_thumb.jpg" alt="Brown Sugar Boba Milk Tea">
+                <div class="meta">
+                  <strong>Brown Sugar Boba Milk Tea</strong>
+                  <small>$28.00</small>
+                </div>
+                <input type="number" min="1" value="1" aria-label="Brown Sugar Boba Milk Tea quantity">
+              </div>
+            </div>
+            <div class="cart-actions">
+              <button class="button" type="button">View All</button>
+              <button class="button primary" type="button">Checkout</button>
+            </div>
+          </aside>
+          <label class="cart-backdrop" for="cart-toggle" aria-hidden="true"></label>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="catalog">
+        <aside class="sidebar">
+          <div class="filter-section">
+            <h3>Drink Categories</h3>
+            <nav class="filter-links">
+              <a href="#" class="active">Popular Picks</a>
+              <a href="#">Fruit Tea</a>
+              <a href="#">Coffee</a>
+              <a href="#">Milk Tea</a>
+            </nav>
+          </div>
+
+          <div class="filter-section">
+            <h3>Price Range</h3>
+            <div class="filter-group-alt">
+              <label class="check"><input type="checkbox"> $0 - $20</label>
+              <label class="check"><input type="checkbox"> $20 - $35</label>
+              <label class="check"><input type="checkbox"> $35+</label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <h3>Customer Rating</h3>
+            <div class="filter-group-alt">
+              <label class="check"><input type="checkbox"> 4 Stars & Up</label>
+            </div>
+          </div>
+        </aside>
+
+        <div class="catalog-main">
+          <section class="hero">
+            <div class="hero-content">
+              <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span aria-current="page">Popular Picks</span>
+              </nav>
+              <h1>Discover Future Drinks</h1>
+              <p>A curated drink collection including fruit tea, coffee, and milk tea.</p>
+              <div class="hero-actions">
+                <button class="button primary" type="button">Shop Now</button>
+                <button class="button" type="button">Learn More</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="product-grid">
+            <article class="card">
+              <a class="thumb" href="product.html?pid=1">
+                <img src="assets/thumb/1_thumb.jpg" alt="Peach Oolong Fruit Tea thumbnail">
+              </a>
+              <div class="body">
+                <div class="title">
+                  <h2><a href="product.html?pid=1">Peach Oolong Fruit Tea</a></h2>
+                  <span class="price">$26.00</span>
+                </div>
+                <p>Peach aroma with oolong base and a clean finish.</p>
+                <div class="actions">
+                  <button class="button primary" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <a class="thumb" href="product.html?pid=2">
+                <img src="assets/thumb/2_thumb.jpg" alt="Grapefruit Jasmine Fruit Tea thumbnail">
+              </a>
+              <div class="body">
+                <div class="title">
+                  <h2><a href="product.html?pid=2">Grapefruit Jasmine Fruit Tea</a></h2>
+                  <span class="price">$25.00</span>
+                </div>
+                <p>Fresh grapefruit with jasmine notes and bright citrus aroma.</p>
+                <div class="actions">
+                  <button class="button primary" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <a class="thumb" href="product.html?pid=3">
+                <img src="assets/thumb/3_thumb.jpg" alt="Cold Brew Americano thumbnail">
+              </a>
+              <div class="body">
+                <div class="title">
+                  <h2><a href="product.html?pid=3">Cold Brew Americano</a></h2>
+                  <span class="price">$20.00</span>
+                </div>
+                <p>Slow-steeped cold brew with a clean finish.</p>
+                <div class="actions">
+                  <button class="button primary" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <a class="thumb" href="product.html?pid=4">
+                <img src="assets/thumb/4_thumb.jpg" alt="Sea Salt Caramel Latte thumbnail">
+              </a>
+              <div class="body">
+                <div class="title">
+                  <h2><a href="product.html?pid=4">Sea Salt Caramel Latte</a></h2>
+                  <span class="price">$32.00</span>
+                </div>
+                <p>Espresso and caramel milk with sea salt foam.</p>
+                <div class="actions">
+                  <button class="button primary" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <a class="thumb" href="product.html?pid=5">
+                <img src="assets/thumb/5_thumb.jpg" alt="Brown Sugar Boba Milk Tea thumbnail">
+              </a>
+              <div class="body">
+                <div class="title">
+                  <h2><a href="product.html?pid=5">Brown Sugar Boba Milk Tea</a></h2>
+                  <span class="price">$28.00</span>
+                </div>
+                <p>Brown sugar boba and creamy milk tea with rich texture.</p>
+                <div class="actions">
+                  <button class="button primary" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <a class="thumb" href="product.html?pid=6">
+                <img src="assets/thumb/6_thumb.jpg" alt="Matcha Milk Tea thumbnail">
+              </a>
+              <div class="body">
+                <div class="title">
+                  <h2><a href="product.html?pid=6">Matcha Milk Tea</a></h2>
+                  <span class="price">$30.00</span>
+                </div>
+                <p>Smooth matcha blended with milk for a tea-forward finish.</p>
+                <div class="actions">
+                  <button class="button primary" type="button">Add to Cart</button>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
