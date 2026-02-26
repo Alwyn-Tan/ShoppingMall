@@ -4,11 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Product - Future Drinks</title>
+  <title>Peach Oolong Fruit Tea - IEMS Shop</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+
   <header class="header">
     <div class="container">
       <div class="topbar">
@@ -19,6 +20,8 @@
         <form class="search" action="#" role="search">
           <input type="search" placeholder="Search drinks..." name="q">
         </form>
+
+        <a class="button" href="admin.html">Admin</a>
 
         <div class="cart">
           <input id="cart-toggle" type="checkbox" aria-hidden="true" class="visually-hidden">
@@ -59,49 +62,33 @@
 
   <main class="main">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
+      <nav class="breadcrumb">
+        <a href="index.html">All Drinks</a>
         <span class="sep">/</span>
-        <a id="breadcrumb-category" href="index.html">Category</a>
+        <a id="breadcrumb-category" href="#">Category</a>
         <span class="sep">/</span>
-        <span id="breadcrumb-product" aria-current="page">Product</span>
+        <span id="breadcrumb-product" aria-current="page">Loading...</span>
       </nav>
 
       <section class="product-detail-layout">
         <div class="product-visual">
           <div class="product-gallery">
-            <input class="visually-hidden" type="radio" name="gallery" id="gallery-1" checked>
-            <input class="visually-hidden" type="radio" name="gallery" id="gallery-2">
-            <input class="visually-hidden" type="radio" name="gallery" id="gallery-3">
-
             <div class="gallery-stage">
-              <figure class="gallery-slide slide-1">
-                <img id="product-main-image" src="" alt="Product main image">
-              </figure>
-              <figure class="gallery-slide slide-2">
-                <img id="product-image-2" src="" alt="Product image view 2">
-              </figure>
-              <figure class="gallery-slide slide-3">
-                <img id="product-image-3" src="" alt="Product image view 3">
+              <figure class="gallery-slide" style="opacity:1;transform:none;position:relative;">
+                <img id="product-main-image" src="" alt="Product image">
               </figure>
             </div>
 
             <div class="gallery-thumbs">
-              <label class="thumb" for="gallery-1">
-                <img id="product-thumb-1" src="" alt="Select image 1">
-              </label>
-              <label class="thumb" for="gallery-2">
-                <img id="product-thumb-2" src="" alt="Select image 2">
-              </label>
-              <label class="thumb" for="gallery-3">
-                <img id="product-thumb-3" src="" alt="Select image 3">
-              </label>
+              <span class="thumb">
+                <img id="product-thumb-image" src="" alt="Product thumbnail">
+              </span>
             </div>
           </div>
 
           <div class="product-long-desc">
             <h2>About This Drink</h2>
-            <p id="product-description">Loading product description...</p>
+            <p id="product-description">Loading description...</p>
             <ul class="feature-list">
               <li>Freshly prepared with quality ingredients</li>
               <li>Flavor and sweetness can be customized</li>
@@ -113,9 +100,9 @@
         <aside class="product-checkout-panel">
           <div class="sticky-content">
             <div class="product-header">
-              <span id="product-category" class="category-tag">Category</span>
-              <h1 id="product-name">Loading Product...</h1>
-              <div id="product-sku" class="sku-info">SKU: P000 - <span class="status-stock">In Stock</span></div>
+              <span id="product-category" class="category-tag">Loading...</span>
+              <h1 id="product-name">Loading...</h1>
+              <div class="sku-info"><span id="product-sku">PID: -</span> <span class="status-stock"></span></div>
             </div>
 
             <div class="price-block">
@@ -132,8 +119,25 @@
               </div>
 
               <div class="purchase-actions">
-                <button class="button primary x-large" type="button">Add to Cart</button>
-                <button class="button x-large" type="button">Buy Now</button>
+                <button id="product-add-to-cart" class="button primary x-large" type="button">Add to Cart</button>
+                <button id="product-buy-now" class="button x-large" type="button">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="trust-signals">
+              <div class="signal-item">
+                <span class="icon">🚚</span>
+                <div>
+                  <strong>Free Shipping</strong>
+                  <p>Free standard shipping on orders over $50.</p>
+                </div>
+              </div>
+              <div class="signal-item">
+                <span class="icon">🛡️</span>
+                <div>
+                  <strong>Secure Service</strong>
+                  <p>14-day hassle-free returns.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -149,7 +153,6 @@
       </div>
     </div>
   </footer>
-
   <script src="product.js" defer></script>
 </body>
 
