@@ -14,7 +14,7 @@
     <div class="container">
       <div class="topbar">
         <a class="brand" href="index.html">
-          <strong>Future Drinks</strong>
+          <strong>Furture Drinks</strong>
         </a>
 
         <form class="search" action="#" role="search">
@@ -28,36 +28,15 @@
 
           <label class="cart-btn" for="cart-toggle">
             <span class="label-text">Cart</span>
-            <span class="badge">3</span>
+            <span id="cart-count" class="badge">0</span>
           </label>
 
-          <aside class="cart-panel" aria-label="Shopping list">
+          <aside class="cart-panel">
             <h3>Your Cart</h3>
-            <div class="cart-items">
-              <div class="cart-item">
-                <img src="assets/thumb/1_thumb.jpg" alt="Peach Oolong Fruit Tea">
-                <div class="meta">
-                  <strong>Peach Oolong Fruit Tea</strong>
-                  <small>$26.00</small>
-                </div>
-                <input type="number" min="1" value="1" aria-label="Peach Oolong Fruit Tea quantity">
-              </div>
-              <div class="cart-item">
-                <img src="assets/thumb/3_thumb.jpg" alt="Cold Brew Americano">
-                <div class="meta">
-                  <strong>Cold Brew Americano</strong>
-                  <small>$20.00</small>
-                </div>
-                <input type="number" min="1" value="1" aria-label="Cold Brew Americano quantity">
-              </div>
-              <div class="cart-item">
-                <img src="assets/thumb/5_thumb.jpg" alt="Brown Sugar Boba Milk Tea">
-                <div class="meta">
-                  <strong>Brown Sugar Boba Milk Tea</strong>
-                  <small>$28.00</small>
-                </div>
-                <input type="number" min="1" value="1" aria-label="Brown Sugar Boba Milk Tea quantity">
-              </div>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-summary">
+              <span>Total</span>
+              <strong id="cart-total">$0.00</strong>
             </div>
             <div class="cart-actions">
               <button class="button" type="button">View All</button>
@@ -82,16 +61,9 @@
           <div class="filter-section">
             <h3>Price Range</h3>
             <div class="filter-group-alt">
-              <label class="check"><input type="checkbox"> $0 - $20</label>
-              <label class="check"><input type="checkbox"> $20 - $35</label>
-              <label class="check"><input type="checkbox"> $35+</label>
-            </div>
-          </div>
-
-          <div class="filter-section">
-            <h3>Customer Rating</h3>
-            <div class="filter-group-alt">
-              <label class="check"><input type="checkbox"> 4 Stars & Up</label>
+              <label class="check"><input type="checkbox" name="price-range" value="0-20"> $0 - $20</label>
+              <label class="check"><input type="checkbox" name="price-range" value="20-35"> $20 - $35</label>
+              <label class="check"><input type="checkbox" name="price-range" value="35+"> $35+</label>
             </div>
           </div>
 
@@ -123,9 +95,11 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
+        <span>TAN Shixiang, 1155238635, IEMS 5730</span>
       </div>
     </div>
   </footer>
+  <script src="cart.js" defer></script>
   <script src="index.js" defer></script>
 </body>
 

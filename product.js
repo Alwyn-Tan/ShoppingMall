@@ -7,6 +7,9 @@ const productPriceEl = document.getElementById("product-price");
 const productDescriptionEl = document.getElementById("product-description");
 const productMainImageEl = document.getElementById("product-main-image");
 const productThumbImageEl = document.getElementById("product-thumb-image");
+const quantityInputEl = document.getElementById("qty");
+const addToCartBtn = document.getElementById("product-add-to-cart");
+const buyNowBtn = document.getElementById("product-buy-now");
 
 function parsePidFromUrl() {
   const params = new URLSearchParams(window.location.search);
@@ -39,6 +42,13 @@ function setErrorState(message) {
   productSkuEl.textContent = "PID: N/A";
   productMainImageEl.src = "";
   productThumbImageEl.src = "";
+  if (addToCartBtn) {
+    addToCartBtn.disabled = true;
+    addToCartBtn.removeAttribute("data-cart-add");
+  }
+  if (buyNowBtn) {
+    buyNowBtn.disabled = true;
+  }
 }
 
 function applyProduct(product) {
@@ -61,6 +71,32 @@ function applyProduct(product) {
   productMainImageEl.alt = `${product.name} image`;
   productThumbImageEl.src = thumbImage;
   productThumbImageEl.alt = `${product.name} thumbnail`;
+
+  if (addToCartBtn) {
+    addToCartBtn.disabled = false;
+    addToCartBtn.dataset.cartAdd = String(product.pid);
+    addToCartBtn.dataset.cartQtySource = "#qty";
+  }
+  if (buyNowBtn) {
+    buyNowBtn.disabled = false;
+  }
+}
+
+function getPagePid() {
+  const pidRaw = addToCartBtn ? addToCartBtn.dataset.cartAdd : "";
+  const pid = Number.parseInt(pidRaw, 10);
+  return Number.isInteger(pid) && pid > 0 ? pid : null;
+}
+
+function getDesiredQuantity() {
+  if (!quantityInputEl) {
+    return 1;
+  }
+  const qty = Number.parseInt(quantityInputEl.value, 10);
+  if (!Number.isInteger(qty) || qty <= 0) {
+    return 1;
+  }
+  return Math.min(qty, 999);
 }
 
 async function initProductPage() {
@@ -80,6 +116,22 @@ async function initProductPage() {
   } catch (err) {
     setErrorState("Unable to load product details.");
   }
+}
+
+if (buyNowBtn) {
+  buyNowBtn.addEventListener("click", () => {
+    const pid = getPagePid();
+    if (!pid) {
+      return;
+    }
+    const qty = getDesiredQuantity();
+    if (window.shopCart && typeof window.shopCart.add === "function") {
+      window.shopCart.add(pid, qty);
+      if (typeof window.shopCart.openPanel === "function") {
+        window.shopCart.openPanel();
+      }
+    }
+  });
 }
 
 initProductPage();
